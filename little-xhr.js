@@ -1,7 +1,7 @@
 /* XHR Object
- * by rlemon
- * 
- * Usage:
+   by rlemon
+
+   Usage:
 	xhr.get({
 		url: (string),
 		success: (function),*optional*
@@ -19,7 +19,7 @@
 		failure: (function),*optional*
 		data: (json)*optional*
 	});
- *
+
  */ 
 var xhr = {
     xmlhttp: (function() {
