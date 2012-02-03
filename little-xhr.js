@@ -66,11 +66,11 @@ var xhr = {
                 if (_xhr.readyState == 4) {
                     if (_xhr.status == 200) {
                         if (typeof options.success === 'function') {
-                            options.success.apply(this, [_xhr.responseText]);
+                            options.success.apply(this, [_xhr]);
                         }
                     } else if (_xhr.status && _xhr.status != 200) {
                         if (typeof options.failure === 'function') {
-                            options.failure.apply(this);
+                            options.failure.apply(this, [_xhr]);
                         }
                     }
                 }
