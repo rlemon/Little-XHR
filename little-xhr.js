@@ -46,7 +46,13 @@ var xhr = {
             };
             var data = null;
             if ('data' in options) {
+				/* this depends on a function by Titani (@Zirak)
+				 * https://github.com/Titani
+				 * */
                 data = urlstringify(options.data);
+                
+                /* use if you do not want to pull urlstringify() */
+                // data = "json=" + JSON.stringify(options.data);
             }
             _xhr.send(data);
         }
