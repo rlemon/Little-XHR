@@ -1,26 +1,7 @@
-/* XHR Object
-   by rlemon
-
-   Usage:
-	xhr.get({
-		url: (string),
-		success: (function),*optional*
-		failure: (function)*optional*
-	});
-	xhr.post({
-		url: (string),
-		success: (function),*optional*
-		failure: (function),*optional*
-		data: (json)*optional*
-	});
-	xhr.request(type, {
-		url: (string),
-		success: (function),*optional*
-		failure: (function),*optional*
-		data: (json)*optional*
-	});
-
- */ 
+/* Little XHR
+ * by: rlemon		http://github.com/rlemon/
+ * see README for useage.
+ * */
 var xhr = {
     xmlhttp: (function() {
         var xmlhttp;
