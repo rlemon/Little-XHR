@@ -65,11 +65,11 @@ var xhr = {
             _xhr.onreadystatechange = function() {
                 if (_xhr.readyState == 4) {
                     if (_xhr.status == 200) {
-                        if (typeof options.success === 'function') {
+                        if ('success' in options && options.success.apply) {
                             options.success.apply(this, [_xhr]);
                         }
                     } else if (_xhr.status && _xhr.status != 200) {
-                        if (typeof options.failure === 'function') {
+                        if ('failure' in options && options.failure.apply) {
                             options.failure.apply(this, [_xhr]);
                         }
                     }
