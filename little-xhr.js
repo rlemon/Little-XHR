@@ -1,5 +1,5 @@
 /* Little XHR
- * by: rlemon		http://github.com/rlemon/
+ * by: rlemon        http://github.com/rlemon/
  * see README for useage.
  * */
 var xhr = {
@@ -19,6 +19,37 @@ var xhr = {
             }
         }
         return xmlhttp;
+    }()),
+    urlstringify: (function() { /* Thankyou https://github.com/Titani */
+        var simplies = {
+            number: true,
+            string: true,
+            boolean: true
+        };
+        var singularStringify = function(thing) {
+            if (typeof thing in simplies) {
+                return encodeURIComponent(thing.toString());
+            }
+            return '';
+        };
+        var arrayStringify = function(array, keyName) {
+            keyName = singularStringify(keyName);
+
+            return array.map(function(thing) {
+                return keyName + '=' + singularStringify(thing);
+            });
+        };
+        return function(obj) {
+            return Object.keys(obj).map(function(key) {
+                var val = obj[key];
+
+                if (Array.isArray(val)) {
+                    return arrayStringify(val, key);
+                } else {
+                    return singularStringify(key) + '=' + singularStringify(val);
+                }
+            }).join('&');
+        };
     }()),
     post: function(options) {
         this.request.apply(this, ["POST", options]);
@@ -46,13 +77,7 @@ var xhr = {
             };
             var data = null;
             if ('data' in options) {
-                /* this depends on a function by Titani (@Zirak)
-                 * https://github.com/Titani
-                 * */
-                data = urlstringify(options.data);
-                
-                /* use if you do not want to pull urlstringify() */
-                // data = "json=" + JSON.stringify(options.data);
+                data = this.urlstringify.apply(this, [options.data]);
             }
             _xhr.send(data);
         }
