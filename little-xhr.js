@@ -1,3 +1,8 @@
+// ==ClosureCompiler==
+// @output_file_name default.js
+// @compilation_level SIMPLE_OPTIMIZATIONS
+// ==/ClosureCompiler==
+
 /* Little XHR
  * by: rlemon        http://github.com/rlemon/
  * see README for useage.
@@ -9,10 +14,10 @@ var xhr = {
 			xmlhttp = new XMLHttpRequest();
 		} catch (e) {
 			try {
-				xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+				xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
 			} catch (er) {
 				try {
-					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+					xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
 				} catch (err) {
 					xmlhttp = false;
 				}
@@ -23,9 +28,9 @@ var xhr = {
 	 /* https://github.com/Titani */
 	urlstringify: (function() {
 		var simplies = {
-			number: true,
-			string: true,
-			boolean: true
+			'number': true,
+			'string': true,
+			'boolean': true
 		};
 		var singularStringify = function(thing) {
 			if (typeof thing in simplies) {
@@ -51,10 +56,10 @@ var xhr = {
 		};
 	}()),
 	post: function(options) {
-		this.request.apply(this, ["POST", options]);
+		this.request.apply(this, ['POST', options]);
 	},
 	get: function(options) {
-		this.request.apply(this, ["GET", options]);
+		this.request.apply(this, ['GET', options]);
 	},
 	request: function(type, options) {
 		if (this.xmlhttp && options && 'url' in options) {
