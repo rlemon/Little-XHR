@@ -3,26 +3,29 @@
 ###A light-weight XmlHttpRequest Object
 *For when you just need to do the little things.*
 
-###Usage:
+###Sample Usage:
 	
 	xhr.get({
-		url: (string),
-		success: (function),	/*optional*/
-		failure: (function)		/*optional*/
+		url: "http://example.com/some/page", /* URL String */
+		success: function(xhrObject) { }, /* Optional Success Function */
+		failure: function(xhrObject) { }, /* Optional Failure Function */
+		enctype: "multipart/form-data" /* Optional Content-Type [default: application/x-www-form-urlencoded] */
 	});
 	
 	xhr.post({
-		url: (string),
-		success: (function),	/*optional*/
-		failure: (function),	/*optional*/
-		data: (json)			/*optional*/
+		url: "http://example.com/some/page", /* URL String */
+		success: function(xhrObject) { }, /* Optional Success Function */
+		failure: function(xhrObject) { }, /* Optional Failure Function */
+		enctype: "multipart/form-data", /* Optional Content-Type [default: application/x-www-form-urlencoded] */
+		data: {"json":"data"} /* Optional data */
 	});
 	
-	xhr.request(type, {
-		url: (string),
-		success: (function),	/*optional*/
-		failure: (function),	/*optional*/
-		data: (json)			/*optional*/
+	xhr.request("POST" /* Request Type: GET or POST */, {
+		url: "http://example.com/some/page", /* URL String */
+		success: function(xhrObject) { }, /* Optional Success Function */
+		failure: function(xhrObject) { }, /* Optional Failure Function */
+		enctype: "multipart/form-data", /* Optional Content-Type [default: application/x-www-form-urlencoded] */
+		data: {"json":"data"} /* Optional data */
 	});
 	
 
