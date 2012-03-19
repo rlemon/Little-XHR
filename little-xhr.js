@@ -25,7 +25,7 @@ var xhr = {
 		}
 		return xmlhttp;
 	}()),
-	 /* https://github.com/Titani */
+	 /* https://github.com/Titani/SO-ChatBot/blob/ccf6cfe827aee2af7b2832e48720a8e24a8feeed/source/bot.js#L110 */
 	urlstringify: (function() {
 		var simplies = {
 			'number': true,
