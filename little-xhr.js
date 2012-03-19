@@ -63,19 +63,19 @@ var xhr = {
 	},
 	request: function(type, options) {
 		if (this.xmlhttp && options && 'url' in options) {
-			var _xhr = this.xmlhttp,
+			var xhr = this.xmlhttp,
 				enctype = ('enctype' in options) ? options.enctype : 'application/x-www-form-urlencoded';
-			_xhr.open(type, options.url, true);
-			_xhr.setRequestHeader('Content-Type', enctype);
-			_xhr.onreadystatechange = function() {
-				if (_xhr.readyState == 4) {
-					if (_xhr.status == 200) {
+			xhr.open(type, options.url, true);
+			xhr.setRequestHeader('Content-Type', enctype);
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
 						if ('success' in options && options.success.apply) {
-							options.success.apply(this, [_xhr]);
+							options.success.apply(this, [xhr]);
 						}
-					} else if (_xhr.status && _xhr.status != 200) {
+					} else if (xhr.status && xhr.status != 200) {
 						if ('failure' in options && options.failure.apply) {
-							options.failure.apply(this, [_xhr]);
+							options.failure.apply(this, [xhr]);
 						}
 					}
 				}
@@ -84,7 +84,7 @@ var xhr = {
 			if ('data' in options) {
 				data = this.urlstringify.apply(this, [options.data]);
 			}
-			_xhr.send(data);
+			xhr.send(data);
 		}
 	}
 };
