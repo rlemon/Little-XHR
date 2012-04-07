@@ -1,0 +1,119 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Little-XHR</title>
+  <meta name="description" content="Light-weight XmlHttpRequest Object.">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Little-XHR</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Light-weight XmlHttpRequest Object.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/rlemon/Little-XHR/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/rlemon/Little-XHR/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/rlemon/Little-XHR" class="code">fork Little-XHR on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h3>What is it?</h3>
+
+<p>This object is for cross-browser XMLHttpRequest handling. It is essentially a wrapper object which simplifies your use of the XmlHttpRequest object.</p>
+
+<p>The XHR object provides a clean and easy way for doing asyncronous requests using the familiar API, leveraging <code>success</code> and <code>failure</code> callbacks while allowing you to pass JSON formatted data to the server.</p>
+
+<h3>API Example</h3>
+
+<pre><code>xhr.get({
+    url: "/path/to/some/page",
+    success: function(xhrObject) { 
+        console.log(xhrObject.responseText);
+    },
+    failure: function(xhrObject) { 
+        console.log(xhrObject.status + ' - ' + xhrObject.statusText);
+    },
+    enctype: "multipart/form-data"
+});
+
+xhr.post({
+    url: "/path/to/some/page",
+    success: function(xhrObject) { 
+        console.log(xhrObject.responseText);
+    },
+    failure: function(xhrObject) { 
+        console.log(xhrObject.status + ' - ' + xhrObject.statusText);
+    },
+    enctype: "multipart/form-data",
+    data: {"key1":"value","key2":"Hello World!"}
+});
+
+xhr.request("POST", {
+    url: "/path/to/some/page",
+    success: function(xhrObject) { 
+        console.log(xhrObject.responseText);
+    },
+    failure: function(xhrObject) { 
+        console.log(xhrObject.status + ' - ' + xhrObject.statusText);
+    },
+    enctype: "application/x-www-form-urlencoded",
+    data: {"key1":"value","key2":"Hello World!"}
+});
+</code></pre>
+
+<h3>XHR2?</h3>
+
+<p><a href="http://www.w3.org/TR/XMLHttpRequest/">XMLHttpRequest Level 2</a> or XHR2 is simply the second specification to the XmlHttpRequest interface. This is a new specification and has not been fully adopted by all modern browsers. Consideration on supporting this will be reviewed once the specification has matured. </p>
+
+<h3>What about a Demo?</h3>
+
+<p>There is no specific demo set up at the moment. However, you can always visit <a href="http://github.rlemon.com">rlemon.github.com</a> to see Little-XHR in action.</p>
+
+<h3>Authors and Contributors</h3>
+
+<p>Development by <a href="https://github.com/rlemon" class="user-mention">@rlemon</a>.<br>
+Special mentions go to <a href="https://github.com/Titani" class="user-mention">@Titani</a> for his <code>urlstringify()</code> method.</p>
+
+<h3>Support or Contact</h3>
+
+<p>Having trouble with Little-XHR? Check out the documentation at <a href="https://github.com/rlemon/Little-XHR/wiki">https://github.com/rlemon/Little-XHR/wiki</a> or contact rob.lemon@gmail.com and I'll help you sort it out.</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/rlemon" class="avatar"><img src="https://secure.gravatar.com/avatar/e5b801f3e9b405c4feb5a4461aff73c2?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" height="48"/></a> <a href="https://github.com/rlemon">rlemon</a> maintains <a href="https://github.com/rlemon/Little-XHR">Little-XHR</a></p>
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/rlemon/Little-XHR/tarball/master" class="tar">tar</a><a href="https://github.com/rlemon/Little-XHR/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
